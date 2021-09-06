@@ -1,0 +1,23 @@
+type Message @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  message: String
+  createdAt: String
+  recipient: User @connection
+  sender: User @connection
+  deliveredAt: String
+  readAT: String
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  isNewbie: Boolean
+  createdAt: String
+  updatedAt: String
+  dateOfBirth: String
+  firstName: String
+  lastName: String
+  profileImgUrl: AWSURL
+  email: AWSEmail
+  phone: AWSPhone
+  lastLoggedInAT: String
+}
